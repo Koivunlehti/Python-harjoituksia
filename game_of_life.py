@@ -12,13 +12,13 @@
 import random
 import time
 
-def tulosta(elinalue:list): # Tulosteaan elinalue terminaaliin
+def tulosta(elinalue:list) -> None: # Tulosteaan elinalue terminaaliin
     for rivi in elinalue:
         for solu in rivi:
             print(solu, end=" ")
         print()
 
-def alusta(koko:int):   # Alustetaan elinalue
+def alusta(koko:int) -> list:   # Alustetaan elinalue
     elinalue = []
     for i in range(koko):
         solut = []
@@ -30,9 +30,9 @@ def alusta(koko:int):   # Alustetaan elinalue
         elinalue.append(solut)
     return elinalue
 
-def tarkista_naapurit(elinalue:list, y, x): # Tarkistetaan miten solujen naapurit voivat
+def tarkista_naapurit(elinalue:list, y:int, x:int) -> int: # Tarkistetaan miten solujen naapurit voivat
     elavat = 0
-    
+
     # Naapurit käydään läpi solun ympäriltä
     for i in range(y - 1, y + 2, 1):
         for j in range(x - 1, x + 2, 1):
@@ -50,7 +50,7 @@ def tarkista_naapurit(elinalue:list, y, x): # Tarkistetaan miten solujen naapuri
     
     return elavat
 
-def ela(elinalue:list): # Edetään solujen elämässä
+def ela(elinalue:list) -> list: # Edetään solujen elämässä
     uusi_elinalue = []
 
     # rivit
@@ -86,7 +86,7 @@ def ela(elinalue:list): # Edetään solujen elämässä
 
     return uusi_elinalue
 
-def vertaa_elinalueita(edellinen, nykyinen):    # Verrataan, onko elinalue muuttunut viime kerrasta
+def vertaa_elinalueita(edellinen:list, nykyinen:list) -> bool:    # Verrataan, onko elinalue muuttunut viime kerrasta
     sama = False
     for i in range(len(edellinen)):
         for j in range(len(edellinen)):
@@ -122,12 +122,3 @@ if __name__ == "__main__":
             break
         else:
             edellinen_elinalue = elinalue
-
-
-
-
-
-
-
-
-
