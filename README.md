@@ -1,2 +1,2 @@
 # Python-harjoituksia
-Erilaisia Python harjoituksia
+Vastauksia erilaisiin Python harjoituksiin
